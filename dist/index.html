@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Talks Event Schedule</title>
+    <style>body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1em 0;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+    max-width: 900px;
+    margin: 20px auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#search-section {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#category-search {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.talk {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.talk.lunch {
+    background-color: #ffe0b2; /* Light orange for lunch */
+    border-color: #ffcc80;
+}
+
+.talk h3 {
+    margin-top: 0;
+    color: #0056b3;
+}
+
+.talk p {
+    margin: 5px 0;
+}
+
+.talk-time {
+    font-weight: bold;
+    color: #555;
+}
+
+.talk-speakers span {
+    font-style: italic;
+}
+
+.talk-category span {
+    background-color: #e0e0e0;
+    padding: 3px 8px;
+    border-radius: 3px;
+    margin-right: 5px;
+    font-size: 0.9em;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    background-color: #333;
+    color: #fff;
+}
+</style>
+</head>
+<body>
+    <header>
+        <h1>Technical Talks Event</h1>
+        <p>A full day of insightful technical discussions.</p>
+    </header>
+
+    <main>
+        <section id="search-section">
+            <input type="text" id="category-search" placeholder="Search by category...">
+        </section>
+
+        <section id="schedule-section">
+            <h2>Event Schedule</h2>
+            <div id="schedule-container">
+                <!-- Talks will be injected here by JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Technical Talks Event</p>
+    </footer>
+
+    <script>window.talksData = [
+  {
+    "id": "talk1",
+    "time": "10:00 AM - 11:00 AM",
+    "title": "Introduction to Web Components",
+    "speakers": ["Alice Wonderland"],
+    "category": ["Frontend", "Web Development"],
+    "duration": "1 hour",
+    "description": "A deep dive into building reusable components for the web."
+  },
+  {
+    "id": "talk2",
+    "time": "11:10 AM - 12:10 PM",
+    "title": "Optimizing Node.js Performance",
+    "speakers": ["Bob The Builder"],
+    "category": ["Backend", "Node.js", "Performance"],
+    "duration": "1 hour",
+    "description": "Tips and tricks for making your Node.js applications faster."
+  },
+  {
+    "id": "lunch",
+    "time": "12:20 PM - 01:20 PM",
+    "title": "Lunch Break",
+    "speakers": [],
+    "category": [],
+    "duration": "1 hour",
+    "description": "Enjoy a delicious lunch and network with other attendees!"
+  },
+  {
+    "id": "talk3",
+    "time": "01:30 PM - 02:30 PM",
+    "title": "Advanced CSS Techniques",
+    "speakers": ["Charlie Chaplin"],
+    "category": ["Frontend", "CSS"],
+    "duration": "1 hour",
+    "description": "Explore modern CSS features like Grid, Flexbox, and custom properties."
+  },
+  {
+    "id": "talk4",
+    "time": "02:40 PM - 03:40 PM",
+    "title": "Introduction to Serverless Architectures",
+    "speakers": ["Diana Prince"],
+    "category": ["Cloud", "Serverless"],
+    "duration": "1 hour",
+    "description": "Understanding the basics of serverless computing and its benefits."
+  },
+  {
+    "id": "talk5",
+    "time": "03:50 PM - 04:50 PM",
+    "title": "State Management in React",
+    "speakers": ["Eve Adams"],
+    "category": ["Frontend", "React"],
+    "duration": "1 hour",
+    "description": "Comparing different state management solutions for React applications."
+  },
+  {
+    "id": "talk6",
+    "time": "05:00 PM - 06:00 PM",
+    "title": "Securing Your APIs with OAuth 2.0",
+    "speakers": ["Frankenstein Monster"],
+    "category": ["Backend", "Security", "APIs"],
+    "duration": "1 hour",
+    "description": "Best practices for authenticating and authorizing API access."
+  }
+];document.addEventListener('DOMContentLoaded', () => {
+    const scheduleContainer = document.getElementById('schedule-container');
+    const categorySearchInput = document.getElementById('category-search');
+
+    // talksData will be injected here by the build script
+    const allTalks = window.talksData || [];
+
+    function renderTalks(talksToRender) {
+        scheduleContainer.innerHTML = ''; // Clear existing talks
+        talksToRender.forEach(talk => {
+            const talkElement = document.createElement('div');
+            talkElement.classList.add('talk');
+            if (talk.id === 'lunch') {
+                talkElement.classList.add('lunch');
+            }
+
+            const speakers = talk.speakers.length > 0 ? `<p class="talk-speakers">Speaker(s): <span>${talk.speakers.join(', ')}</span></p>` : '';
+            const categories = talk.category.length > 0 ? `<p class="talk-category">Categories: ${talk.category.map(cat => `<span>${cat}</span>`).join('')}</p>` : '';
+
+            talkElement.innerHTML = `
+                <p class="talk-time">${talk.time}</p>
+                <h3>${talk.title}</h3>
+                ${speakers}
+                ${categories}
+                <p>${talk.description}</p>
+            `;
+            scheduleContainer.appendChild(talkElement);
+        });
+    }
+
+    function filterTalks() {
+        const searchTerm = categorySearchInput.value.toLowerCase().trim();
+        if (!searchTerm) {
+            renderTalks(allTalks);
+            return;
+        }
+
+        const filtered = allTalks.filter(talk => {
+            if (talk.id === 'lunch') { // Always show lunch
+                return true;
+            }
+            return talk.category.some(cat => cat.toLowerCase().includes(searchTerm));
+        });
+        renderTalks(filtered);
+    }
+
+    categorySearchInput.addEventListener('input', filterTalks);
+
+    // Initial render of all talks
+    renderTalks(allTalks);
+});</script>
+</body>
+</html>

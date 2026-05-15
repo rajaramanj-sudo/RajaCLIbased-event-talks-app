@@ -1,0 +1,65 @@
+[
+  {
+    "id": "talk1",
+    "time": "10:00 AM - 11:00 AM",
+    "title": "Introduction to Web Components",
+    "speakers": ["Alice Wonderland"],
+    "category": ["Frontend", "Web Development"],
+    "duration": "1 hour",
+    "description": "A deep dive into building reusable components for the web."
+  },
+  {
+    "id": "talk2",
+    "time": "11:10 AM - 12:10 PM",
+    "title": "Optimizing Node.js Performance",
+    "speakers": ["Bob The Builder"],
+    "category": ["Backend", "Node.js", "Performance"],
+    "duration": "1 hour",
+    "description": "Tips and tricks for making your Node.js applications faster."
+  },
+  {
+    "id": "lunch",
+    "time": "12:20 PM - 01:20 PM",
+    "title": "Lunch Break",
+    "speakers": [],
+    "category": [],
+    "duration": "1 hour",
+    "description": "Enjoy a delicious lunch and network with other attendees!"
+  },
+  {
+    "id": "talk3",
+    "time": "01:30 PM - 02:30 PM",
+    "title": "Advanced CSS Techniques",
+    "speakers": ["Charlie Chaplin"],
+    "category": ["Frontend", "CSS"],
+    "duration": "1 hour",
+    "description": "Explore modern CSS features like Grid, Flexbox, and custom properties."
+  },
+  {
+    "id": "talk4",
+    "time": "02:40 PM - 03:40 PM",
+    "title": "Introduction to Serverless Architectures",
+    "speakers": ["Diana Prince"],
+    "category": ["Cloud", "Serverless"],
+    "duration": "1 hour",
+    "description": "Understanding the basics of serverless computing and its benefits."
+  },
+  {
+    "id": "talk5",
+    "time": "03:50 PM - 04:50 PM",
+    "title": "State Management in React",
+    "speakers": ["Eve Adams"],
+    "category": ["Frontend", "React"],
+    "duration": "1 hour",
+    "description": "Comparing different state management solutions for React applications."
+  },
+  {
+    "id": "talk6",
+    "time": "05:00 PM - 06:00 PM",
+    "title": "Securing Your APIs with OAuth 2.0",
+    "speakers": ["Frankenstein Monster"],
+    "category": ["Backend", "Security", "APIs"],
+    "duration": "1 hour",
+    "description": "Best practices for authenticating and authorizing API access."
+  }
+]

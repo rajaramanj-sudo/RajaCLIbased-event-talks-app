@@ -1,0 +1,82 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1em 0;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+    max-width: 900px;
+    margin: 20px auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#search-section {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#category-search {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.talk {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.talk.lunch {
+    background-color: #ffe0b2; /* Light orange for lunch */
+    border-color: #ffcc80;
+}
+
+.talk h3 {
+    margin-top: 0;
+    color: #0056b3;
+}
+
+.talk p {
+    margin: 5px 0;
+}
+
+.talk-time {
+    font-weight: bold;
+    color: #555;
+}
+
+.talk-speakers span {
+    font-style: italic;
+}
+
+.talk-category span {
+    background-color: #e0e0e0;
+    padding: 3px 8px;
+    border-radius: 3px;
+    margin-right: 5px;
+    font-size: 0.9em;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    background-color: #333;
+    color: #fff;
+}
